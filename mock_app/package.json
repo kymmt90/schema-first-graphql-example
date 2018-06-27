@@ -1,0 +1,14 @@
+{
+  "name": "graphql-mock-server",
+  "private": true,
+  "version": "0.0.1",
+  "description": "graphql-mock-server",
+  "author": "kymmt90",
+  "dependencies": {
+    "apollo-server-express": "*",
+    "graphql-tools": "*",
+    "graphql": "*",
+    "express": "*",
+    "body-parser": "*"
+  }
+}

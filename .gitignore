@@ -24,3 +24,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/mock_app/*
+!/mock_app/index.js
+!/mock_app/package.json
+!/mock_app/package-lock.json
+!/mock_app/mocks.js
