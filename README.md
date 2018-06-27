@@ -1,24 +1,51 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 準備
 
-Things you may want to cover:
+Rubyが必要です。
 
-* Ruby version
+```
+$ git clone git@github.com:kymmt90/schema-first-graphql-example.git
+$ bundle
+```
 
-* System dependencies
+## GraphQLスキーマの生成
 
-* Configuration
+```
+$ bin/rails graphql:schema:dump_as_js
+$ cat ./mock_app/type_defs.js
+module.exports = `
+type Mutation {
+  # An example field added by the generator
+  testField: String!
+}
 
-* Database creation
+type Post {
+  title: String
+}
 
-* Database initialization
+type Query {
+  viewer: User
+}
 
-* How to run the test suite
+type User {
+  email: String
+  popularPosts: [Post!]
+}
+`
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## モックサーバ立ち上げ
 
-* Deployment instructions
+Nodeが必要です。
 
-* ...
+```
+$ cd mock_app
+$ npm install
+$ node index.js
+GraphQL mock server is running!!1
+```
+
+`localhost:3000` でサーバが動きます。
+
+![](graphiql.png)
